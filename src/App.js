@@ -4,6 +4,7 @@ import Home from "./Home";
 import MovieList from "./MovieList";
 import AddMovie from "./AddMovie";
 import SearchMovie from "./SearchMovie";
+import MovieDetail from "./MovieDetail";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/MovieList" element={<MovieList />} />
         <Route path="/AddMovie" element={<AddMovie />} />
         <Route path="/SearchMovie" element={<SearchMovie />} />
+        <Route path="/movies/:id" element={<MovieDetail />} />
       </Routes>
     </Router>
   );

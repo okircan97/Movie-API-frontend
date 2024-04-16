@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 function SearchMovies() {
   const [movies, setMovies] = useState([]);
@@ -45,7 +46,9 @@ function SearchMovies() {
       </form>
       <div>
         {movies.map((movie) => (
-          <div key={movie._id}>{movie.movie_name}</div>
+          <Link to={`/movies/${movie._id}`}>
+            {movie.movie_name} <br />{" "}
+          </Link>
         ))}
       </div>
     </div>
