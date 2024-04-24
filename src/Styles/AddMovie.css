@@ -1,0 +1,60 @@
+.background-add-movie {
+  position: fixed; /* Fixed position */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../Images/add-a-movie.webp"); /* Path to your background image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.addMovieForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px; /* Adjust the width as needed */
+  background: rgba(255, 255, 255, 0.7); /* Semi-transparent white */
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.addMovieForm h1 {
+  color: #333; /* Dark color for the title */
+  margin-bottom: 20px; /* Spacing below the title */
+  font-family: "Orbitron", sans-serif; /* Your chosen font */
+  font-weight: bold; /* Bold font */
+  font-size: 24px; /* Larger font size for the title */
+}
+
+.addMovieForm input,
+.addMovieForm textarea,
+.addMovieForm button {
+  width: 100%; /* Full width within the form */
+  margin-bottom: 10px; /* Spacing between inputs */
+  padding: 10px; /* Padding inside inputs */
+  border: 1px solid #ddd; /* Subtle border */
+  border-radius: 5px; /* Slightly rounded corners for inputs */
+  font-family: "Orbitron", sans-serif; /* Maintain font consistency */
+}
+
+.addMovieForm button {
+  background-color: #5c6bc0; /* Example button color */
+  color: white;
+  border: none;
+  cursor: pointer; /* Cursor change to indicate button */
+}
+
+.addMovieForm button:hover {
+  background-color: #3949ab; /* Darker shade on hover */
+}
