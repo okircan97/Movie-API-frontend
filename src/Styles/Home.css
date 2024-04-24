@@ -1,0 +1,54 @@
+.background {
+  position: fixed; /* Fixed position */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../Images/movie-api-background.webp"); /* Path to your background image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Home {
+  width: 300px; /* Your desired width */
+  height: 300px; /* Your desired height */
+  background: rgba(255, 255, 255, 0.7); /* Semi-transparent white background */
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  font-family: "Orbitron", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: bold;
+  /* font-style: normal; */
+}
+
+body,
+html {
+  margin: 0;
+  height: 100%;
+  overflow: hidden; /* Prevent scrolling */
+}
+
+/* Style your links as desired */
+.Home a {
+  color: #333;
+  margin: 10px;
+  text-decoration: none;
+  font-size: 18px;
+  text-align: center;
+  font-size: 30px;
+}
+
+.Home a:hover {
+  color: #000;
+  text-decoration: underline;
+}
