@@ -1,10 +1,11 @@
 import React, { Component } from "react";
+import "./Styles/Home.css";
 
 class Home extends Component {
   render() {
     return (
-      <div className="App">
-        <body>
+      <div className="background">
+        <div className="Home">
           <a href="/About">About</a>
           <br />
           <a href="/MovieList">Movie List</a>
@@ -12,7 +13,7 @@ class Home extends Component {
           <a href="/AddMovie">Add Movie</a>
           <br />
           <a href="/SearchMovie">Search Movie</a>
-        </body>
+        </div>
       </div>
     );
   }
