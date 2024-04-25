@@ -66,6 +66,7 @@ function AddMovie() {
           placeholder="Rating (1-10)"
           min="1"
           max="10"
+          step="0.1" // This allows decimal values to the tenths place
           required
         />
         <br />
