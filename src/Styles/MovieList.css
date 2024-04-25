@@ -1,0 +1,50 @@
+.movie-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px; /* Adjust the spacing between items */
+  justify-content: center; /* Center items in the container */
+  padding: 16px;
+}
+
+.movie-item {
+  display: block; /* Ensures the link includes the image and title */
+  text-align: center; /* Centers the title under the image */
+  width: 200px; /* Adjust width as needed */
+  margin: 1%;
+  padding-bottom: 1%;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.movie-image {
+  width: 100%; /* Make the image fill the container */
+  height: auto; /* Keep the aspect ratio of the image */
+  border: 1px solid black; /* Border to replicate your drawing */
+}
+
+.movie-title {
+  margin-top: 8px; /* Space between the image and the title */
+  color: white;
+}
+
+.movie-list-container {
+  min-height: 100vh;
+  background-image: linear-gradient(
+    to right bottom,
+    #08091a,
+    #3d2043,
+    #842952,
+    #c34241,
+    #e17908
+  );
+}
+
+.movie-list-title {
+  text-align: center;
+  margin: 0;
+  padding-top: 1%;
+  font-size: 50px;
+  color: orange;
+  font-family: "Orbitron", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: bold;
+}

@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import "./Styles/MovieList.css"; // make sure to include the path to your CSS file
 
 function MovieList() {
   const [movies, setMovies] = useState([]);
@@ -15,13 +16,24 @@ function MovieList() {
   }, []);
 
   return (
-    <div>
-      <h1>Movie List</h1>
-      {movies.map((movie) => (
-        <Link to={`/movies/${movie._id}`}>
-          {movie.movie_name} <br />{" "}
-        </Link>
-      ))}
+    <div className="movie-list-container">
+      <h1 className="movie-list-title">Movie List</h1>
+      <div className="movie-grid">
+        {movies.map((movie) => (
+          <Link
+            to={`/movies/${movie._id}`}
+            key={movie._id}
+            className="movie-item"
+          >
+            <img
+              src={movie.image_url}
+              alt={movie.movie_name}
+              className="movie-image"
+            />
+            <div className="movie-title">{movie.movie_name}</div>
+          </Link>
+        ))}
+      </div>
     </div>
   );
 }
