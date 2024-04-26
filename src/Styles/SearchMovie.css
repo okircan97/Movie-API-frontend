@@ -1,0 +1,81 @@
+.movie-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px; /* Adjust the spacing between items */
+  justify-content: center; /* Center items in the container */
+  padding: 16px;
+}
+
+.movie-item {
+  display: block; /* Ensures the link includes the image and title */
+  text-align: center; /* Centers the title under the image */
+  width: 200px; /* Adjust width as needed */
+  margin: 1%;
+  padding-bottom: 1%;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.movie-item:hover {
+  transform: translateY(-10px); /* Moves the item 10 pixels up when hovered */
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.movie-image {
+  width: 200px; /* Fixed width for all images */
+  height: 300px; /* Fixed height for all images */
+  object-fit: cover; /* This will cover the area, cropping the image if necessary */
+  border: 1px solid black;
+  display: block; /* To remove bottom space under the image */
+}
+.movie-title {
+  margin-top: 8px; /* Space between the image and the title */
+  color: white;
+}
+
+.movie-list-container {
+  min-height: 100vh;
+  background-image: linear-gradient(
+    to right bottom,
+    #08091a,
+    #3d2043,
+    #842952,
+    #c34241,
+    #e17908
+  );
+}
+
+.search-movie-title {
+  text-align: center;
+  margin: 0;
+  padding-top: 1%;
+  padding-bottom: 2%;
+  font-size: 50px;
+  color: orange;
+  font-family: "Orbitron", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: bold;
+}
+.searchMovieForm {
+  text-align: center;
+}
+
+.searchMovieForm input,
+.searchMovieForm textarea,
+.searchMovieForm button {
+  margin-bottom: 10px; /* Spacing between inputs */
+  padding: 10px; /* Padding inside inputs */
+  border: 1px solid #ddd; /* Subtle border */
+  border-radius: 5px; /* Slightly rounded corners for inputs */
+  font-family: "Orbitron", sans-serif; /* Maintain font consistency */
+}
+
+.searchMovieForm button {
+  background-color: #5c6bc0; /* Example button color */
+  color: white;
+  border: none;
+  cursor: pointer; /* Cursor change to indicate button */
+}
+
+.searchMovieForm button:hover {
+  background-color: #3949ab; /* Darker shade on hover */
+}
