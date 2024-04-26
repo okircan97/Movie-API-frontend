@@ -15,12 +15,18 @@
   background-color: rgba(0, 0, 0, 0.2);
 }
 
-.movie-image {
-  width: 100%; /* Make the image fill the container */
-  height: auto; /* Keep the aspect ratio of the image */
-  border: 1px solid black; /* Border to replicate your drawing */
+.movie-item:hover {
+  transform: translateY(-10px); /* Moves the item 10 pixels up when hovered */
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
+.movie-image {
+  width: 200px; /* Fixed width for all images */
+  height: 300px; /* Fixed height for all images */
+  object-fit: cover; /* This will cover the area, cropping the image if necessary */
+  border: 1px solid black;
+  display: block; /* To remove bottom space under the image */
+}
 .movie-title {
   margin-top: 8px; /* Space between the image and the title */
   color: white;
