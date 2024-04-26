@@ -1,17 +1,20 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import "./Styles/SearchMovie.css";
 
 function SearchMovies() {
-  const [movies, setMovies] = useState([]);
+  const [allMovies, setAllMovies] = useState([]); // State to store all movies
+  const [displayedMovies, setDisplayedMovies] = useState([]); // State to store movies to display
   const [searchTerm, setSearchTerm] = useState("");
 
+  // Fetch all movies initially and store them in `allMovies`
   useEffect(() => {
-    // Fetch all movies initially
     axios
       .get("http://localhost:8000/api/movies")
       .then((response) => {
-        setMovies(response.data.data);
+        setAllMovies(response.data.data); // Save movies in `allMovies`
+        setDisplayedMovies([]); // Initially, no movies should be displayed
       })
       .catch((error) => console.error("Error fetching movies:", error));
   }, []);
@@ -25,31 +28,42 @@ function SearchMovies() {
     if (!searchTerm.trim()) return;
 
     // Implement search functionality
-    // This is a client-side search - for large data sets, a server-side solution is recommended
-    const filteredMovies = movies.filter((movie) =>
+    const filteredMovies = allMovies.filter((movie) =>
       movie.movie_name.toLowerCase().includes(searchTerm.toLowerCase())
     );
-    setMovies(filteredMovies);
+    setDisplayedMovies(filteredMovies); // Update displayed movies based on search
   };
 
   return (
     <div>
-      <h1>Search Movies</h1>
-      <form onSubmit={handleSearch}>
-        <input
-          type="text"
-          value={searchTerm}
-          onChange={handleSearchChange}
-          placeholder="Enter movie name"
-        />
-        <button type="submit">Search</button>
-      </form>
-      <div>
-        {movies.map((movie) => (
-          <Link to={`/movies/${movie._id}`}>
-            {movie.movie_name} <br />{" "}
-          </Link>
-        ))}
+      <div className="movie-list-container">
+        <h1 className="search-movie-title">Search Movies</h1>
+        <form className="searchMovieForm" onSubmit={handleSearch}>
+          <input
+            type="text"
+            value={searchTerm}
+            onChange={handleSearchChange}
+            placeholder="Enter movie name"
+          />
+          <br />
+          <button type="submit">Search</button>
+        </form>
+        <div className="movie-grid">
+          {displayedMovies.map((movie) => (
+            <Link
+              to={`/movies/${movie._id}`}
+              key={movie._id}
+              className="movie-item"
+            >
+              <img
+                src={movie.image_url || "default-image-url"} // Add a default image URL if `image_url` is null or empty
+                alt={movie.movie_name}
+                className="movie-image"
+              />
+              <div className="movie-title">{movie.movie_name}</div>
+            </Link>
+          ))}
+        </div>
       </div>
     </div>
   );
