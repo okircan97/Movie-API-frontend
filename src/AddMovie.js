@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Styles/AddMovie.css";
 
 function AddMovie() {
@@ -7,7 +8,10 @@ function AddMovie() {
     movie_name: "",
     info: "",
     rating: "",
+    image_url: "", // Added field for the image URL
   });
+
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setMovieData({
@@ -27,7 +31,9 @@ function AddMovie() {
         console.log(response.data);
         alert("Movie added successfully!");
         // Reset form or redirect, etc.
-        setMovieData({ movie_name: "", info: "", rating: "" });
+        setMovieData({ movie_name: "", info: "", rating: "", image_url: "" });
+        // Redirect to the MovieList page
+        navigate("/MovieList");
       })
       .catch((error) => {
         console.error("Error adding movie:", error);
@@ -66,8 +72,17 @@ function AddMovie() {
           placeholder="Rating (1-10)"
           min="1"
           max="10"
-          step="0.1" // This allows decimal values to the tenths place
+          step="0.1"
           required
+        />
+        <br />
+        <br />
+        <input
+          type="text"
+          name="image_url"
+          value={movieData.image_url}
+          onChange={handleChange}
+          placeholder="Image URL"
         />
         <br />
         <br />
