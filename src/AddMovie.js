@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Styles/AddMovie.css";
+import Header from ".//Header";
 
 function AddMovie() {
   const [movieData, setMovieData] = useState({
@@ -43,6 +44,7 @@ function AddMovie() {
 
   return (
     <div className="background-add-movie">
+      <Header></Header>
       <form onSubmit={handleSubmit} className="addMovieForm">
         <h1>Add Movie</h1>
         <input

@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./Styles/SearchMovie.css";
+import Header from ".//Header";
 
 function SearchMovies() {
   const [allMovies, setAllMovies] = useState([]); // State to store all movies
@@ -36,6 +37,7 @@ function SearchMovies() {
 
   return (
     <div>
+      <Header></Header>
       <div className="movie-list-container">
         <h1 className="search-movie-title">Search Movies</h1>
         <form className="searchMovieForm" onSubmit={handleSearch}>
