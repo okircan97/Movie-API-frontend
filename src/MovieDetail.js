@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import "./Styles/MovieDetail.css";
+import Header from "./Header";
 
 function MovieDetail() {
   const { id } = useParams();
@@ -44,6 +45,7 @@ function MovieDetail() {
 
   return (
     <div className="movie-details-container">
+      <Header></Header>
       {editMode ? (
         <form onSubmit={handleSubmit} className="edit-form">
           <label>

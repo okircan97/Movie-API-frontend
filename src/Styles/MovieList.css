@@ -4,6 +4,7 @@
   gap: 16px; /* Adjust the spacing between items */
   justify-content: center; /* Center items in the container */
   padding: 16px;
+  margin-top: 50px;
 }
 
 .movie-item {

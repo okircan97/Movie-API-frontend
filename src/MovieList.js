@@ -1,7 +1,8 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import "./Styles/MovieList.css"; // make sure to include the path to your CSS file
+import "./Styles/MovieList.css";
+import Header from ".//Header";
 
 function MovieList() {
   const [movies, setMovies] = useState([]);
@@ -17,6 +18,7 @@ function MovieList() {
 
   return (
     <div className="movie-list-container">
+      <Header></Header>
       <h1 className="movie-list-title">Movie List</h1>
       <div className="movie-grid">
         {movies.map((movie) => (

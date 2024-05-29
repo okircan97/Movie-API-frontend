@@ -1,0 +1,18 @@
+header {
+  padding: 10px 0;
+  text-align: left; /* Align text to the left */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0; /* Ensure header stretches across the full width */
+  z-index: 1000; /* Ensures the header is above all other content */
+}
+
+.headerImg {
+  width: 150px; /* Sets the size of the logo */
+  vertical-align: middle; /* Aligns the logo vertically in the middle of the header */
+  margin-left: 50px; /* Adds some left margin for spacing from the screen edge */
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+  border-radius: 25%; /* Gives a circular shape to the background */
+  display: inline-block; /* Ensures padding and background encapsulate the image */
+}
