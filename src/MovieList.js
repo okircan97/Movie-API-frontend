@@ -16,6 +16,14 @@ function MovieList() {
       .catch((error) => console.error("Error fetching movies:", error));
   }, []);
 
+  useEffect(() => {
+    document.body.classList.add("movie-list-page");
+
+    return () => {
+      document.body.classList.remove("movie-list-page");
+    };
+  }, []);
+
   return (
     <div className="movie-list-container">
       <Header></Header>

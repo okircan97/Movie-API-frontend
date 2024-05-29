@@ -1,3 +1,7 @@
+body.movie-list-page {
+  overflow-y: auto;
+}
+
 .movie-grid {
   display: flex;
   flex-wrap: wrap;
@@ -5,6 +9,7 @@
   justify-content: center; /* Center items in the container */
   padding: 16px;
   margin-top: 50px;
+  overflow-y: auto; /* Allow vertical scrolling */
 }
 
 .movie-item {
@@ -22,12 +27,13 @@
 }
 
 .movie-image {
-  width: 200px; /* Fixed width for all images */
+  width: 100%; /* Make image responsive within the container */
   height: 300px; /* Fixed height for all images */
   object-fit: cover; /* This will cover the area, cropping the image if necessary */
   border: 1px solid black;
   display: block; /* To remove bottom space under the image */
 }
+
 .movie-title {
   margin-top: 8px; /* Space between the image and the title */
   color: white;
@@ -43,6 +49,7 @@
     #c34241,
     #e17908
   );
+  overflow-y: auto; /* Enable vertical scrolling */
 }
 
 .movie-list-title {
